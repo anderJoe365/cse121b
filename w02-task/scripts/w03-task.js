@@ -62,11 +62,11 @@ function divideNumbers()
 document.querySelector('#divideNumbers').addEventListener('click', divideNumbers);
 
 /* Decision Structure */
-document.getElementById('#getTotal').addEventListener('click', function()
+document.getElementById('getTotal').addEventListener('click', function()
 {
-    const subtotal = parseFloat(document.getElementById('subtotal').value);
-    const isMember = document.getElementById('member').ariaChecked;
-    const total = isMember ? subtotal * 0.8 : subtotal;
+    let subtotal = parseFloat(document.getElementById('subtotal').value);
+    let isMember = document.getElementById('member').checked;
+    let total = isMember ? subtotal * 0.8 : subtotal;
     document.getElementById('total').textContent = `$ ${total.toFixed(2)}`;
 })
 
@@ -74,19 +74,19 @@ document.getElementById('#getTotal').addEventListener('click', function()
 /* Output Source Array */
 let numbersArray = [1,2,3,4,5,6,7,8,9,10,11,12,13];
 
-document.querySelector('#array').innerHTML = sourceArray;
+document.querySelector('#array').innerHTML = numbersArray;
 
 /* Output Odds Only Array */
-document.querySelector('#odds').innerHTML = sourceArray.fileter(number => number % 2 != 0);
+document.querySelector('#odds').innerHTML = numbersArray.filter(number => number % 2 != 0);
 
 /* Output Evens Only Array */
-document.querySelector('#evens').innerHTML = sourceArray.fileter(number => number % 2 === 0);
+document.querySelector('#evens').innerHTML = numbersArray.filter(number => number % 2 === 0);
 
 /* Output Sum of Org. Array */
-document.querySelector('#sumOfArray').innerHTML = sourceArray.reduce((accumulator, currentValue) => accumulator+ currentValue);
+document.querySelector('#sumOfArray').innerHTML = numbersArray.reduce((accumulator, currentValue) => accumulator+ currentValue);
 
 /* Output Multiplied by 2 Array */
-document.querySelector('#multiplied').innerHTML = sourceArray.map(number => number *2);
+document.querySelector('#multiplied').innerHTML = numbersArray.map(number => number *2);
 
 /* Output Sum of Multiplied by 2 Array */
-document.querySelector('#sumOfMultiplied').innerHTML = sourceArray.map(number => number * 2).reduce((accumulator, currentValue) => accumulator + currentValue);
+document.querySelector('#sumOfMultiplied').innerHTML = numbersArray.map(number => number * 2).reduce((accumulator, currentValue) => accumulator + currentValue);
